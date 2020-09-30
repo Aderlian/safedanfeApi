@@ -1,0 +1,40 @@
+<h1 class="mt-4">Lista das empresas</h1>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <button class="btn btn-warning" (click)="newCompany()">
+        <i class="fa fa-plus"></i>
+        Novo
+      </button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Razão social</th>
+            <th>CNPJ</th>
+            <th>Diretorio dos arquivos</th>
+            <th>Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let company of companies">
+            <td>{{ company.id }}</td>
+            <td>{{ company.fantasyName }}</td>
+            <td>{{ company.cnpj }}</td>
+            <td>{{ company.filePath }}</td>
+            <td>
+              <button class="btn btn-dark" routerLink="/company-form/{{ company.id }}">
+                <i class="fa fa-edit"></i>
+              </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
