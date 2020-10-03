@@ -1,0 +1,42 @@
+<h1 class="mt-4">Lista dos fornecedores</h1>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <button class="btn btn-warning" (click)="newProvider()">
+        <i class="fa fa-plus"></i>
+        Novo
+      </button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Razão social</th>
+            <th>CNPJ</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let provider of providers">
+            <td>{{ provider.id }}</td>
+            <td>{{ provider.name }}</td>
+            <td>{{ provider.cnpj }}</td>
+            <td>{{ provider.city }}</td>
+            <td>{{ provider.state }}</td>
+            <td>
+              <button class="btn btn-dark" routerLink="/provider-form/{{ provider.id }}">
+                <i class="fa fa-edit"></i>
+              </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

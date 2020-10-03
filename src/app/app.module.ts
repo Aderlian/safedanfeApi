@@ -1,3 +1,5 @@
+
+import { ProvidersModule } from './providers/providers.module';
 import { CompaniesModule } from './companies/companies.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,6 +11,7 @@ import { AppComponent } from './app.component';
 import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component';
 import { CompaniesService } from './companies.service';
+import { ProvidersService } from './providers.service';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,12 @@ import { CompaniesService } from './companies.service';
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    CompaniesModule
+    CompaniesModule,
+    ProvidersModule
   ],
   providers: [
-    CompaniesService
+    CompaniesService,
+    ProvidersService
   ],
   bootstrap: [AppComponent]
 })
